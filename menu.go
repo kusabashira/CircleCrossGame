@@ -23,7 +23,8 @@ func (m *Menu) React(g *Game, e termbox.Event) error {
 		case termbox.KeyArrowLeft, termbox.KeyArrowRight:
 			m.firstTurn = m.firstTurn.Reverse()
 		case termbox.KeySpace, termbox.KeyEnter:
-			g.Scene = NewCompetition(m.firstTurn)
+			g.FirstTurn = m.firstTurn
+			g.Scene = NewCompetition(g.FirstTurn)
 		}
 	}
 	return nil

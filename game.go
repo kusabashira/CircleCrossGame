@@ -16,6 +16,7 @@ type Game struct {
 	NoCrossWin  int
 	Running     bool
 	Scene       Scene
+	FirstTurn   Cell
 }
 
 func NewGame() *Game {
