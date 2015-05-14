@@ -39,10 +39,6 @@ func (r *Result) React(g *Game, e termbox.Event) error {
 
 func (r *Result) SetView(g *Game) error {
 	termbox.HideCursor()
-	if err := tbxClear(); err != nil {
-		return err
-	}
-	tbxSetBaseView(g)
 
 	x, y := tbxCenterXY()
 	switch r.winner {
@@ -76,6 +72,5 @@ func (r *Result) SetView(g *Game) error {
 				termbox.ColorGreen, termbox.ColorDefault)
 		}
 	}
-
 	return termbox.Flush()
 }

@@ -31,15 +31,10 @@ func (m *Menu) React(g *Game, e termbox.Event) error {
 
 func (m *Menu) SetView(g *Game) error {
 	termbox.HideCursor()
-	if err := tbxClear(); err != nil {
-		return err
-	}
-	tbxSetBaseView(g)
 
 	x, y := tbxCenterXY()
 	tbxSetText(x+4, y-1, "Which is first?",
 		termbox.ColorGreen, termbox.ColorDefault)
-
 	switch m.firstTurn {
 	case Circle:
 		tbxSetText(x+4, y+1, "Circle",

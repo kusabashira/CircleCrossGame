@@ -75,11 +75,6 @@ func (c *Competition) React(g *Game, e termbox.Event) error {
 }
 
 func (c *Competition) SetView(g *Game) error {
-	if err := tbxClear(); err != nil {
-		return err
-	}
-	tbxSetBaseView(g)
-
 	cenX, cenY := tbxCenterXY()
 	switch c.turn {
 	case Circle:
@@ -101,6 +96,5 @@ func (c *Competition) SetView(g *Game) error {
 				termbox.ColorGreen, termbox.ColorDefault)
 		}
 	}
-
 	return termbox.Flush()
 }
