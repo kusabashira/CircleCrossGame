@@ -8,7 +8,7 @@ import (
 
 type Scene interface {
 	React(g *Game, e termbox.Event) error
-	SetView(g *Game) error
+	SetView()
 }
 
 type Game struct {
@@ -61,7 +61,8 @@ func (g *Game) setView() error {
 	}
 
 	g.setBaseView()
-	return g.Scene.SetView()
+	g.Scene.SetView()
+	return termbox.Flush()
 }
 
 func (g *Game) react(e termbox.Event) error {

@@ -29,7 +29,7 @@ func (m *Menu) React(g *Game, e termbox.Event) error {
 	return nil
 }
 
-func (m *Menu) SetView(g *Game) error {
+func (m *Menu) SetView() {
 	termbox.HideCursor()
 
 	x, y := tbxCenterXY()
@@ -47,5 +47,4 @@ func (m *Menu) SetView(g *Game) error {
 		tbxSetText(x+12, y+1, "Cross",
 			termbox.ColorGreen|termbox.AttrBold, termbox.ColorDefault)
 	}
-	return termbox.Flush()
 }

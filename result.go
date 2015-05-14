@@ -37,7 +37,7 @@ func (r *Result) React(g *Game, e termbox.Event) error {
 	return nil
 }
 
-func (r *Result) SetView(g *Game) error {
+func (r *Result) SetView() {
 	termbox.HideCursor()
 
 	x, y := tbxCenterXY()
@@ -72,5 +72,4 @@ func (r *Result) SetView(g *Game) error {
 				termbox.ColorGreen, termbox.ColorDefault)
 		}
 	}
-	return termbox.Flush()
 }
