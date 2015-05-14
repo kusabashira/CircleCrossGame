@@ -12,17 +12,17 @@ type Scene interface {
 }
 
 type Game struct {
-	NoCircleWin int
-	NoCrossWin  int
-	Running     bool
-	Scene       Scene
-	FirstTurn   Cell
+	noCircleWin int
+	noCrossWin  int
+	running     bool
+	scene       Scene
+	firstTurn   Cell
 }
 
 func NewGame() *Game {
 	return &Game{
-		Scene:   NewMenu(),
-		Running: false,
+		scene:   NewMenu(),
+		running: false,
 	}
 }
 
@@ -37,8 +37,28 @@ func (g *Game) Init() error {
 }
 
 func (g *Game) Close() {
-	g.Running = false
+	g.running = false
 	termbox.Close()
+}
+
+func (g *Game) SetFirstTurn(c Cell) {
+	g.firstTurn = c
+}
+
+func (g *Game) GetFirstTurn() Cell {
+	return g.firstTurn
+}
+
+func (g *Game) SetScene(s Scene) {
+	g.scene = s
+}
+
+func (g *Game) CountUpCircleWin() {
+	g.noCircleWin++
+}
+
+func (g *Game) CountUpCrossWin() {
+	g.noCrossWin++
 }
 
 func (g *Game) setBaseView() {
@@ -47,10 +67,10 @@ func (g *Game) setBaseView() {
 		termbox.ColorGreen, termbox.ColorDefault)
 	tbxSetText(x-15, y+4, "(Press Ctrl+c or ESC to exit)",
 		termbox.ColorGreen, termbox.ColorDefault)
-	if !(g.NoCircleWin == 0 && g.NoCrossWin == 0) {
-		tbxSetText(x-12, y-1, fmt.Sprintf("Circle: %d", g.NoCircleWin),
+	if !(g.noCircleWin == 0 && g.noCrossWin == 0) {
+		tbxSetText(x-12, y-1, fmt.Sprintf("Circle: %d", g.noCircleWin),
 			termbox.ColorGreen, termbox.ColorDefault)
-		tbxSetText(x-12, y+1, fmt.Sprintf(" Cross: %d", g.NoCrossWin),
+		tbxSetText(x-12, y+1, fmt.Sprintf(" Cross: %d", g.noCrossWin),
 			termbox.ColorGreen, termbox.ColorDefault)
 	}
 	tbxSetFrame(x-2, y-2, x+2, y+2, termbox.ColorGreen)
@@ -62,17 +82,17 @@ func (g *Game) setView() error {
 	}
 
 	g.setBaseView()
-	g.Scene.SetView()
+	g.scene.SetView()
 	return termbox.Flush()
 }
 
 func (g *Game) react(e termbox.Event) error {
-	return g.Scene.React(g, e)
+	return g.scene.React(g, e)
 }
 
 func (g *Game) Main() error {
-	g.Running = true
-	for g.Running {
+	g.running = true
+	for g.running {
 		if err := g.setView(); err != nil {
 			return err
 		}

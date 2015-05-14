@@ -64,11 +64,11 @@ func (c *Competition) React(g *Game, e termbox.Event) error {
 		w := c.board.Winner()
 		switch w {
 		case Circle:
-			g.NoCircleWin++
+			g.CountUpCircleWin()
 		case Cross:
-			g.NoCrossWin++
+			g.CountUpCrossWin()
 		}
-		g.Scene = NewResult(c.board, w)
+		g.SetScene(NewResult(c.board, w))
 	}
 	c.SupressCursorXY()
 	return nil
