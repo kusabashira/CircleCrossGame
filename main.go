@@ -23,7 +23,7 @@ v0.1.0
 `[1:])
 }
 
-func _main() (int, error) {
+func _main() error {
 	isHelp := flag.Bool("help", false, "")
 	isVersion := flag.Bool("version", false, "")
 	flag.Usage = usage
@@ -31,26 +31,22 @@ func _main() (int, error) {
 	switch {
 	case *isHelp:
 		usage()
-		return 2, nil
+		return nil
 	case *isVersion:
 		version()
-		return 2, nil
+		return nil
 	}
 
 	g := NewGame()
 	if err := g.Init(); err != nil {
-		return 1, err
+		return err
 	}
-	if err := g.Main(); err != nil {
-		return 1, err
-	}
-	return 0, nil
+	return g.Main()
 }
 
 func main() {
-	e, err := _main()
-	if err != nil {
+	if err := _main(); err != nil {
 		fmt.Fprintln(os.Stderr, "circlecrossgame:", err)
+		os.Exit(1)
 	}
-	os.Exit(e)
 }
