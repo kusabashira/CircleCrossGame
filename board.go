@@ -23,7 +23,7 @@ func (c *Cell) Reversed() Cell {
 	}
 }
 
-func (c *Cell) View() rune {
+func (c *Cell) Appearance() rune {
 	switch *c {
 	case Circle:
 		return 'o'

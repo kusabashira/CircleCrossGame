@@ -92,7 +92,7 @@ func (c *Competition) SetView() {
 	termbox.SetCursor(cenX+c.x-1, cenY+c.y-1)
 	for x := 0; x < 3; x++ {
 		for y := 0; y < 3; y++ {
-			termbox.SetCell(cenX+x-1, cenY+y-1, c.board[x][y].View(),
+			termbox.SetCell(cenX+x-1, cenY+y-1, c.board[x][y].Appearance(),
 				termbox.ColorGreen, termbox.ColorDefault)
 		}
 	}

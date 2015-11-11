@@ -70,7 +70,7 @@ func (r *Result) SetView() {
 	x1, y1 := tbxCenterXY()
 	for x := 0; x < 3; x++ {
 		for y := 0; y < 3; y++ {
-			termbox.SetCell(x1+x-1, y1+y-1, r.board[x][y].View(),
+			termbox.SetCell(x1+x-1, y1+y-1, r.board[x][y].Appearance(),
 				termbox.ColorGreen, termbox.ColorDefault)
 		}
 	}
