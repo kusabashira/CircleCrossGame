@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"os"
 )
 
@@ -24,10 +25,14 @@ func version() {
 }
 
 func _main() error {
-	isHelp := flag.Bool("help", false, "")
-	isVersion := flag.Bool("version", false, "")
-	flag.Usage = usage
-	flag.Parse()
+	f := flag.NewFlagSet("circlecrossgame:", flag.ContinueOnError)
+	f.SetOutput(ioutil.Discard)
+
+	isHelp := f.Bool("help", false, "")
+	isVersion := f.Bool("version", false, "")
+	if err := f.Parse(os.Args[1:]); err != nil {
+		return err
+	}
 	switch {
 	case *isHelp:
 		usage()
