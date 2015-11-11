@@ -56,7 +56,7 @@ func (c *Competition) React(g *Game, e termbox.Event) error {
 			case AlreadyPlaced:
 				return nil
 			case nil:
-				c.turn = c.turn.Reverse()
+				c.turn = c.turn.Reversed()
 			}
 		}
 	}

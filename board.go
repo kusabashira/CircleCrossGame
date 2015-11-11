@@ -12,7 +12,7 @@ const (
 	Cross
 )
 
-func (c *Cell) Reverse() Cell {
+func (c *Cell) Reversed() Cell {
 	switch *c {
 	case Circle:
 		return Cross

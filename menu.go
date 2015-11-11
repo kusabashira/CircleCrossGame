@@ -21,7 +21,7 @@ func (m *Menu) React(g *Game, e termbox.Event) error {
 		case termbox.KeyCtrlC, termbox.KeyEsc:
 			g.Close()
 		case termbox.KeyArrowLeft, termbox.KeyArrowRight:
-			m.firstTurn = m.firstTurn.Reverse()
+			m.firstTurn = m.firstTurn.Reversed()
 		case termbox.KeySpace, termbox.KeyEnter:
 			t := m.firstTurn
 			g.SetFirstTurn(t)

@@ -29,8 +29,8 @@ func (r *Result) React(g *Game, e termbox.Event) error {
 		case termbox.KeySpace, termbox.KeyEnter:
 			if r.replay {
 				t := g.GetFirstTurn()
-				g.SetFirstTurn(t.Reverse())
-				g.SetScene(NewCompetition(t.Reverse()))
+				g.SetFirstTurn(t.Reversed())
+				g.SetScene(NewCompetition(t.Reversed()))
 			} else {
 				g.Close()
 			}
