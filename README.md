@@ -4,7 +4,7 @@ CircleCrossGame
 This is a CLI game application.
 a.k.a marubatu game.
 
-![](screenshot.png)
+![screenshot](https://raw.githubusercontent.com/kusabashira/ss/master/circlecrossgame/app.png)
 
 Installation
 -----
