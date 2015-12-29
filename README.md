@@ -1,5 +1,5 @@
 CircleCrossGame
-====================
+===============
 
 This is a CLI game application.
 a.k.a marubatu game.
@@ -7,7 +7,7 @@ a.k.a marubatu game.
 ![screenshot](https://raw.githubusercontent.com/kusabashira/ss/master/circlecrossgame/app.png)
 
 Installation
------
+------------
 
 `circlecrossgame` can be easily installed as an executable.
 Download the latest
@@ -21,7 +21,7 @@ $ go get github.com/kusabashira/circlecrossgame
 ```
 
 Usage
-====================
+=====
 
 ```
 $ circlecrossgame
@@ -31,9 +31,10 @@ It will start game.
 (press the ESC key to exit)
 
 Operation
-====================
+=========
 
-###Menu
+### Menu
+
 | Key    |                       |
 |--------|-----------------------|
 | Right  | Toggle first putter   |
@@ -43,7 +44,8 @@ Operation
 | ESC    | Quit this application |
 | Ctrl+C | Quit this application |
 
-###Game
+### Game
+
 | Key    |                            |
 |--------|----------------------------|
 | Up     | Move to the top            |
@@ -55,7 +57,8 @@ Operation
 | ESC    | Quit this application      |
 | Ctrl+C | Quit this application      |
 
-###Result
+### Result
+
 | Key    |                       |
 |--------|-----------------------|
 | Right  | Toggle replay         |
@@ -66,11 +69,11 @@ Operation
 | Ctrl+C | Quit this application |
 
 License
-====================
+=======
 
 MIT License
 
 Author
-====================
+======
 
 kusabashira <kusabashira227@gmail.com>
