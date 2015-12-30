@@ -36,8 +36,12 @@ func (c *Competition) React(g *Game, e termbox.Event) error {
 	case termbox.EventError:
 		return e.Err
 	case termbox.EventKey:
+		switch e.Ch {
+		case 'q':
+			g.Close()
+		}
 		switch e.Key {
-		case termbox.KeyCtrlC, termbox.KeyEsc:
+		case termbox.KeyCtrlC:
 			g.Close()
 		case termbox.KeyArrowLeft:
 			c.x--

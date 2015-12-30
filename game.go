@@ -65,7 +65,7 @@ func (g *Game) setBaseView() {
 	x, y := tbxCenterXY()
 	tbxSetText(x-9, y-4, "Circle Cross Game",
 		termbox.ColorGreen, termbox.ColorDefault)
-	tbxSetText(x-15, y+4, "(Press Ctrl+c or ESC to exit)",
+	tbxSetText(x-14, y+4, "(Press q or Ctrl-c to exit)",
 		termbox.ColorGreen, termbox.ColorDefault)
 	if !(g.noCircleWin == 0 && g.noCrossWin == 0) {
 		tbxSetText(x-12, y-1, fmt.Sprintf("Circle: %d", g.noCircleWin),
