@@ -28,7 +28,7 @@ $ circlecrossgame
 ```
 
 It will start game.
-(press the ESC key to exit)
+(press the q or Ctrl-c to exit)
 
 Operation
 =========
@@ -41,7 +41,7 @@ Operation
 | Left   | Toggle first putter   |
 | Space  | Start this game       |
 | Enter  | Start this game       |
-| ESC    | Quit this application |
+| q      | Quit this application |
 | Ctrl+C | Quit this application |
 
 ### Game
@@ -54,7 +54,7 @@ Operation
 | Left   | Move to the left           |
 | Space  | Put Cell on current cursor |
 | Enter  | Put Cell on current cursor |
-| ESC    | Quit this application      |
+| q      | Quit this application      |
 | Ctrl+C | Quit this application      |
 
 ### Result
@@ -65,7 +65,7 @@ Operation
 | Left   | Toggle replay         |
 | Space  | Decide replay         |
 | Enter  | Decide replay         |
-| ESC    | Quit this application |
+| q      | Quit this application |
 | Ctrl+C | Quit this application |
 
 License
