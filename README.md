@@ -21,7 +21,7 @@ $ go get github.com/kusabashira/circlecrossgame
 ```
 
 Usage
-=====
+-----
 
 ```
 $ circlecrossgame
@@ -31,7 +31,7 @@ It will start game.
 (press the q or Ctrl-c to exit)
 
 Operation
-=========
+---------
 
 ### Menu
 
@@ -69,11 +69,11 @@ Operation
 | Ctrl+C | Quit this application |
 
 License
-=======
+-------
 
 MIT License
 
 Author
-======
+------
 
 kusabashira <kusabashira227@gmail.com>
