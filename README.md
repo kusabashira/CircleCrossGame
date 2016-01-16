@@ -9,15 +9,14 @@ a.k.a marubatu game.
 Installation
 ------------
 
-`circlecrossgame` can be easily installed as an executable.
-Download the latest
-[compiled binaries](https://github.com/kusabashira/circlecrossgame/releases)
-and put it anywhere in your executable path.
+### compiled binary
 
-Or, if you've done Go development before
-and your $GOPATH/bin directory is already in your PATH:
+See [releases](https://github.com/kusabashira/csvp/releases).
+
+### go get
+
 ```
-$ go get github.com/kusabashira/circlecrossgame
+go get github.com/kusabashira/csvp
 ```
 
 Usage
