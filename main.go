@@ -7,6 +7,10 @@ import (
 	"os"
 )
 
+var (
+	version = "0.2.1"
+)
+
 func printUsage() {
 	os.Stderr.WriteString(`
 Usage: circlecrossgame [OPTION]...
@@ -19,9 +23,7 @@ Options:
 }
 
 func printVersion() {
-	os.Stderr.WriteString(`
-0.2.1
-`[1:])
+	fmt.Fprintln(os.Stderr, version)
 }
 
 func _main() error {
