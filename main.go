@@ -31,6 +31,10 @@ func printVersion() {
 	fmt.Fprintln(os.Stderr, version)
 }
 
+func printErr(err interface{}) {
+	fmt.Fprintf(os.Stderr, "%s: %s\n", name, err)
+}
+
 func _main() error {
 	flagset.SetOutput(ioutil.Discard)
 	if err := flagset.Parse(os.Args[1:]); err != nil {
@@ -54,7 +58,7 @@ func _main() error {
 
 func main() {
 	if err := _main(); err != nil {
-		fmt.Fprintf(os.Stderr, "%s: %s\n", name, err)
+		printErr(err)
 		os.Exit(1)
 	}
 }
