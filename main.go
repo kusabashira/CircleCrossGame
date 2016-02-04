@@ -8,18 +8,19 @@ import (
 )
 
 var (
+	name    = "circlecrossgame"
 	version = "0.2.1"
 )
 
 func printUsage() {
-	os.Stderr.WriteString(`
-Usage: circlecrossgame [OPTION]...
+	fmt.Fprintf(os.Stderr, `
+Usage: %s [OPTION]...
 Play circle cross game on terminal.
 
 Options:
 	--help       show this help message
 	--version    print the version
-`[1:])
+`[1:], name)
 }
 
 func printVersion() {
@@ -27,7 +28,7 @@ func printVersion() {
 }
 
 func _main() error {
-	f := flag.NewFlagSet("circlecrossgame:", flag.ContinueOnError)
+	f := flag.NewFlagSet(name, flag.ContinueOnError)
 	f.SetOutput(ioutil.Discard)
 
 	isHelp := f.Bool("help", false, "")
@@ -53,7 +54,7 @@ func _main() error {
 
 func main() {
 	if err := _main(); err != nil {
-		fmt.Fprintln(os.Stderr, "circlecrossgame:", err)
+		fmt.Fprintf(os.Stderr, "%s: %s\n", name, err)
 		os.Exit(1)
 	}
 }
