@@ -10,6 +10,10 @@ import (
 var (
 	name    = "circlecrossgame"
 	version = "0.2.1"
+
+	flagset   = flag.NewFlagSet(name, flag.ContinueOnError)
+	isHelp    = flagset.Bool("help", false, "")
+	isVersion = flagset.Bool("version", false, "")
 )
 
 func printUsage() {
@@ -28,12 +32,8 @@ func printVersion() {
 }
 
 func _main() error {
-	f := flag.NewFlagSet(name, flag.ContinueOnError)
-	f.SetOutput(ioutil.Discard)
-
-	isHelp := f.Bool("help", false, "")
-	isVersion := f.Bool("version", false, "")
-	if err := f.Parse(os.Args[1:]); err != nil {
+	flagset.SetOutput(ioutil.Discard)
+	if err := flagset.Parse(os.Args[1:]); err != nil {
 		return err
 	}
 	switch {
