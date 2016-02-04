@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func usage() {
+func printUsage() {
 	os.Stderr.WriteString(`
 Usage: circlecrossgame [OPTION]...
 Play circle cross game on terminal.
@@ -35,7 +35,7 @@ func _main() error {
 	}
 	switch {
 	case *isHelp:
-		usage()
+		printUsage()
 		return nil
 	case *isVersion:
 		version()
