@@ -35,29 +35,27 @@ func printErr(err interface{}) {
 	fmt.Fprintf(os.Stderr, "%s: %s\n", name, err)
 }
 
-func _main() error {
+func main() {
 	flagset.SetOutput(ioutil.Discard)
 	if err := flagset.Parse(os.Args[1:]); err != nil {
-		return err
+		printErr(err)
+		os.Exit(2)
 	}
 	switch {
 	case *isHelp:
 		printUsage()
-		return nil
+		os.Exit(0)
 	case *isVersion:
 		printVersion()
-		return nil
+		os.Exit(0)
 	}
 
 	g := NewGame()
 	if err := g.Init(); err != nil {
-		return err
+		printErr(err)
+		os.Exit(1)
 	}
-	return g.Main()
-}
-
-func main() {
-	if err := _main(); err != nil {
+	if err := g.Main(); err != nil {
 		printErr(err)
 		os.Exit(1)
 	}
