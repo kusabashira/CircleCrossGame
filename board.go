@@ -35,8 +35,8 @@ func (c *Cell) Appearance() rune {
 }
 
 var (
-	AlreadyPlaced   = errors.New("Already placed")
-	IndexOutOfBoard = errors.New("Index out of board")
+	ErrAlreadyPlaced   = errors.New("Already placed")
+	ErrIndexOutOfBoard = errors.New("Index out of board")
 )
 
 type Board [3][3]Cell
@@ -47,10 +47,10 @@ func NewBoard() *Board {
 
 func (b *Board) Put(x, y int, c Cell) error {
 	if x < 0 || x >= 3 || y < 0 || y >= 3 {
-		return IndexOutOfBoard
+		return ErrIndexOutOfBoard
 	}
 	if b[x][y] != Empty {
-		return AlreadyPlaced
+		return ErrAlreadyPlaced
 	}
 	b[x][y] = c
 	return nil

@@ -55,9 +55,9 @@ func (c *Competition) React(g *Game, e termbox.Event) error {
 			c.SupressCursorXY()
 			err := c.board.Put(c.x, c.y, c.turn)
 			switch err {
-			case IndexOutOfBoard:
+			case ErrIndexOutOfBoard:
 				return err
-			case AlreadyPlaced:
+			case ErrAlreadyPlaced:
 				return nil
 			case nil:
 				c.turn = c.turn.Reversed()
