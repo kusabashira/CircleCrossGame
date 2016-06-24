@@ -8,10 +8,10 @@ import (
 )
 
 var (
-	name    = "circlecrossgame"
+	cmdName = "circlecrossgame"
 	version = "0.2.1"
 
-	flagset   = flag.NewFlagSet(name, flag.ContinueOnError)
+	flagset   = flag.NewFlagSet(cmdName, flag.ContinueOnError)
 	isHelp    = flagset.Bool("help", false, "")
 	isVersion = flagset.Bool("version", false, "")
 )
@@ -24,7 +24,7 @@ Play circle cross game on terminal.
 Options:
 	--help       show this help message
 	--version    print the version
-`[1:], name)
+`[1:], cmdName)
 }
 
 func printVersion() {
@@ -32,7 +32,7 @@ func printVersion() {
 }
 
 func printErr(err interface{}) {
-	fmt.Fprintf(os.Stderr, "%s: %s\n", name, err)
+	fmt.Fprintf(os.Stderr, "%s: %s\n", cmdName, err)
 }
 
 func main() {
