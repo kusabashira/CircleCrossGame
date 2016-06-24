@@ -8,8 +8,8 @@ import (
 )
 
 var (
-	cmdName = "circlecrossgame"
-	version = "0.2.1"
+	cmdName    = "circlecrossgame"
+	cmdVersion = "0.2.1"
 
 	flagset   = flag.NewFlagSet(cmdName, flag.ContinueOnError)
 	isHelp    = flagset.Bool("help", false, "")
@@ -28,7 +28,7 @@ Options:
 }
 
 func printVersion() {
-	fmt.Fprintln(os.Stderr, version)
+	fmt.Fprintln(os.Stderr, cmdVersion)
 }
 
 func printErr(err interface{}) {
