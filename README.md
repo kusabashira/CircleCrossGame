@@ -4,19 +4,19 @@ CircleCrossGame
 This is a CLI game application.
 a.k.a marubatu game.
 
-![screenshot](https://raw.githubusercontent.com/kusabashira/ss/master/circlecrossgame/app.png)
+![screenshot](https://raw.githubusercontent.com/nil2nekoni2/ss/master/circlecrossgame/app.png)
 
 Installation
 ------------
 
 ### compiled binary
 
-See [releases](https://github.com/kusabashira/csvp/releases).
+See [releases](https://github.com/nil2nekoni/csvp/releases).
 
 ### go get
 
 ```
-go get github.com/kusabashira/csvp
+go get github.com/nil2nekoni/csvp
 ```
 
 Usage
@@ -75,4 +75,4 @@ MIT License
 Author
 ------
 
-kusabashira <kusabashira227@gmail.com>
+nil2 <nil2@nil2.org>
